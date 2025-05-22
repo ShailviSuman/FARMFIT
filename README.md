@@ -1,4 +1,4 @@
-# 🌾 FarmFit – Adaptive Fertilizer Recommendation Based on Weather
+# 🌾🧑‍🌾 FarmFit – Adaptive Fertilizer Recommendation Based on Weather
 
 A solo-developed ML + Web project under the **Hack4Nature 1.0** hackathon -- **Rural Innovation Track**
 ---
@@ -42,7 +42,7 @@ The dataset contains 60 crafted rows with the following columns:
 
 ---
 
-## 🤝 Adjustment Logic & Scientific Basis
+## 🧠 Adjustment Logic & Scientific Basis
 # According to the government curated datasets and experts researches, Following conclusions and adjustments are being drawn:-
 ### 🌧️ Rainfall-Based NPK Adjustment
 
@@ -60,11 +60,11 @@ The dataset contains 60 crafted rows with the following columns:
 
   * Sandy soils lack water/nutrient retention
 
-> ✍️ **All recommendations/suggestions align with ICAR and FAO agronomic practices.**
+> 📚 **All recommendations/suggestions align with ICAR and FAO agronomic practices.**
 
 ---
 
-## 🔍 Data Sources and Citations [GOVERNMENT-SOURCED AND RESEARCH-DRIVEN]
+## 🔍📑 Data Sources and Citations [GOVERNMENT-SOURCED AND RESEARCH-DRIVEN]
 
 * [ICAR Soil and Nutrient Management PDF](https://icar.org.in/sites/default/files/inline-files/NRM-2702.pdf)
 * [ICAR Crop Management Handbook](https://icar.org.in/sites/default/files/inline-files/Crop_Management.pdf)
@@ -74,7 +74,7 @@ The dataset contains 60 crafted rows with the following columns:
 
 ---
 
-## 🚀 Tech Stack
+## 🚀🛠️ Tech Stack
 
 * **Streamlit** – Web interface
 * **Python (scikit-learn)** – Model training and deployment
@@ -100,7 +100,7 @@ The dataset contains 60 crafted rows with the following columns:
 
 ---
 
-## 🧑‍💻 CREATED By
+## 👩‍💻 CREATED By
 
 **Team Hackure** – Solo participant
 **Name:** - **SHAILVI SUMAN**
