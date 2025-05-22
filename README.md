@@ -1,23 +1,22 @@
 # 🌾 FarmFit – Adaptive Fertilizer Recommendation Based on Weather
 
-A solo-developed ML + Web project under the **Hack4Nature 1.0** hackathon (Rural Innovation Track).
-
+A solo-developed ML + Web project under the **Hack4Nature 1.0** hackathon -- **Rural Innovation Track**
 ---
 
 ## 🌍 Project Overview
 
-**FarmFit** is a smart, personalized fertilizer recommendation system designed for rural farmers in India. It uses machine learning to suggest optimal compost and NPK fertilizer quantities based on:
+**FarmFit** is a smart, personalized fertilizer recommendation system designed for rural farmers in India. It uses machine learning algorithm to give a personalized suggestion of optimal compost and NPK fertilizer quantities based on:
 
 * **Soil pH**
 * **Crop type**
 * **Soil texture**
 * **Local rainfall**
 
-The system prioritizes **economically feasible**, **eco-friendly**, and **regionally realistic** solutions.
+The entire system prioritizes **economically feasible**, **eco-friendly**, and **regionally realistic** solutions.
 
 ---
 
-## ⚙️ Features
+## ⚙️ Features of our System
 
 * Predicts **Compost (kg/acre)** and **NPK (kg/acre)** for 5 key Indian crops
 * Inputs: Soil pH, Crop, Soil Type, Rainfall (mm)
@@ -35,7 +34,7 @@ The dataset contains 60 handcrafted rows with the following columns:
 | Feature                | Description                                   |
 | ---------------------- | --------------------------------------------- |
 | Soil\_pH               | Range: 5.5–7.5 depending on crop requirements |
-| Crop                   | Rice, Wheat, Millets, Cotton, Sugarcane       |
+| Crops                  | Rice, Wheat, Millets, Cotton, Sugarcane       |
 | Soil\_Type             | Clay, Loam, Sandy, Black                      |
 | Rainfall\_mm           | 30–200 mm across Low, Medium, High bands      |
 | Compost\_kg\_per\_acre | Adjusted based on crop and soil type          |
@@ -44,7 +43,7 @@ The dataset contains 60 handcrafted rows with the following columns:
 ---
 
 ## 🤝 Adjustment Logic & Scientific Basis
-
+# According to the government curated datasets and experts research, Following conclusions and adjustments are being drawn:-
 ### 🌧️ Rainfall-Based NPK Adjustment
 
 * **High rainfall (121–200 mm)**: NPK increased \~10%
@@ -61,11 +60,11 @@ The dataset contains 60 handcrafted rows with the following columns:
 
   * Sandy soils lack water/nutrient retention
 
-> ✍️ **All recommendations align with ICAR and FAO agronomic practices.**
+> ✍️ **All recommendations/suggestions align with ICAR and FAO agronomic practices.**
 
 ---
 
-## 🔍 Data Sources and Citations
+## 🔍 Data Sources and Citations [GOVERNMENT-SOURCED AND RESEARCH-DRIVEN]
 
 * [ICAR Soil and Nutrient Management PDF](https://icar.org.in/sites/default/files/inline-files/NRM-2702.pdf)
 * [ICAR Crop Management Handbook](https://icar.org.in/sites/default/files/inline-files/Crop_Management.pdf)
