@@ -43,7 +43,7 @@ The dataset contains 60 crafted rows with the following columns:
 ---
 
 ## 🧠 Adjustment Logic & Scientific Basis
-# According to the government curated datasets and experts researches, Following conclusions and adjustments are being drawn:-
+# According to the government-curated datasets and experts' researches, Following conclusions and adjustments are being drawn:-
 ### 🌧️ Rainfall-Based NPK Adjustment
 
 * **High rainfall (121–200 mm)**: NPK increased \~10%
