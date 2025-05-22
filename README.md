@@ -1,6 +1,7 @@
 # 🌾🧑‍🌾 FarmFit – Adaptive Fertilizer Recommendation Based on Weather
 
-A solo-developed ML + Web project under the **Hack4Nature 1.0** hackathon -- **Rural Innovation Track**
+A solo-developed ML + Web project under the **Hack4Nature 1.0** hackathon --
+**Rural Innovation Track**
 ---
 
 ## 🌍 Project Overview
