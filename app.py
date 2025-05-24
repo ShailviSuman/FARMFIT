@@ -4,6 +4,8 @@ import joblib
 import requests
 import json
 import altair as alt  
+import plotly.express as px
+
 
 # CSS for fonts and button styles 
 st.markdown(
