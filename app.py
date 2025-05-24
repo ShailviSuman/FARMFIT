@@ -115,5 +115,6 @@ if st.button(t["submit"]):
         compost, n, p, k = map(lambda x: round(x, 2), prediction)
 
         st.subheader(t["output"])
-        st.markdown(f"🌿 **Compost**: {compost} kg/acre")
-        st.markdown(f"🧪 **NPK**: {n}:{p}:{k} kg/acre")
+        st.markdown(f"🌿 **Compost**: {compost:.2f} kg/acre")
+        st.markdown(f"🧪 **NPK**: {n:.2f}:{p:.2f}:{k:.2f} kg/acre")
+
