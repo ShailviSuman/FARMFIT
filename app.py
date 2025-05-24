@@ -118,3 +118,39 @@ if st.button(t["submit"]):
         st.markdown(f"🌿 **Compost**: {compost:.2f} kg/acre")
         st.markdown(f"🧪 **NPK**: {n:.2f}:{p:.2f}:{k:.2f} kg/acre")
 
+st.subheader("📊 Visualizations")
+
+# 1. Rainfall Bar Plot
+rain_data = pd.DataFrame({
+    "Parameter": ["Rainfall (mm)"],
+    "Value": [rainfall]
+})
+
+rain_chart = alt.Chart(rain_data).mark_bar(color="skyblue").encode(
+    x=alt.X("Parameter", title=""),
+    y=alt.Y("Value", title="Millimetres (mm)")
+).properties(width=300, height=200)
+
+st.altair_chart(rain_chart)
+
+# 2. NPK Composition Pie Chart
+npk_data = pd.DataFrame({
+    "Nutrient": ["Nitrogen (N)", "Phosphorus (P)", "Potassium (K)"],
+    "Value": [n, p, k]
+})
+
+fig = px.pie(npk_data, names="Nutrient", values="Value", title="🔬 NPK Composition")
+st.plotly_chart(fig)
+
+# 3. Compost & Nutrient Summary Bar Chart
+summary_data = pd.DataFrame({
+    "Type": ["Compost", "N", "P", "K"],
+    "Value (kg/acre)": [compost, n, p, k]
+})
+
+summary_chart = alt.Chart(summary_data).mark_bar(color="mediumseagreen").encode(
+    x="Type",
+    y="Value (kg/acre)"
+).properties(width=400, height=250)
+
+st.altair_chart(summary_chart)
