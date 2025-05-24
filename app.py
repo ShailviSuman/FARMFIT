@@ -91,25 +91,7 @@ if st.button(t["submit"]):
         rainfall = get_rainfall(city)
         if rainfall is None:
             st.stop()
-        # Show rainfall bar chart
-        rain_data = pd.DataFrame({
-            "Type": ["Rainfall (mm)"],
-            "Value": [rainfall]
-        })
-        chart = alt.Chart(rain_data).mark_bar(color="skyblue").encode(
-            x='Type',
-            y='Value'
-        ).properties(width=300, height=200)
-        st.altair_chart(chart)
-
         
-        input_df = pd.DataFrame([{
-            "Crop": crop,
-            "Soil_Type": soil,
-            "Rainfall_mm": rainfall,
-            "Soil_pH": pH
-        }])
-
 
         input_df = pd.DataFrame([{
             "Crop": crop,
