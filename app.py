@@ -39,22 +39,6 @@ t = {
     "input_label": "Enter crop details"
 }
 
-if st.button(t["submit"]):
-    if not crop or not soil or not city:
-        st.error(t["errors"]["missing_input"])
-    elif pH < 4.5 or pH > 9.0:
-        st.warning(t["errors"]["invalid_pH"])
-    else:
-        rainfall = get_rainfall(city)
-        if rainfall is None:
-            st.stop()  # Stop if API failed or city invalid
-
-        # Show rainfall value visually
-        rain_data = pd.DataFrame({
-            "Type": ["Rainfall (mm)"],
-            "Value": [rainfall]
-        })
-
         import altair as alt  # If not already imported
         chart = alt.Chart(rain_data).mark_bar(color="skyblue").encode(
             x='Type',
@@ -132,15 +116,19 @@ if st.button(t["submit"]):
         st.warning(t["errors"]["invalid_pH"])
     else:
         rainfall = get_rainfall(city)
-        input_df = pd.DataFrame([{
-            "Crop": crop,
-            "Soil_Type": soil,
-            "Rainfall_mm": rainfall,
-            "Soil_pH": pH
-        }])
+        if rainfall is None:
+            st.stop()  # Stop if API failed or city invalid
+
+        # Show rainfall value visually
+        rain_data = pd.DataFrame({
+            "Type": ["Rainfall (mm)"],
+            "Value": [rainfall]
+        })
         prediction = model.predict(input_df)[0]
         compost, n, p, k = map(lambda x: round(x, 2), prediction)
 
         st.subheader(t["output"])
         st.markdown(f"🌿 **Compost**: {compost} kg/acre")
         st.markdown(f"🧪 **NPK**: {n}:{p}:{k} kg/acre")
+
+
