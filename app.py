@@ -51,8 +51,7 @@ st.title(t["title"])
 crop = st.selectbox(t["crop"], ["Rice", "Wheat", "Millets", "Cotton", "Sugarcane"])
 soil = st.selectbox(t["soil"], ["Clay", "Loam", "Sandy", "Black"])
 pH = st.number_input(t["soil_ph"], min_value=4.5, max_value=9.0, step=0.1)
-city = st.text_input(t["City"], placeholder="e.g., Chennai, Mumbai, Delhi")
-
+city = st.text_input(t["rainfall"], placeholder="Name your city to get rainfall e.g., Chennai, Mumbai, Delhi")
 
 
 # Function to get rainfall from API
