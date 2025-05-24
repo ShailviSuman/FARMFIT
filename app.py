@@ -88,10 +88,7 @@ if st.button(t["submit"]):
     else:
         rainfall = get_rainfall(city)
         if rainfall is None:
-            st.stop()  # Stop if API failed
-
-        st.write(f"🌧️ Estimated Rainfall: {rainfall} mm")
-
+            st.stop()
         # Show rainfall bar chart
         rain_data = pd.DataFrame({
             "Type": ["Rainfall (mm)"],
@@ -111,46 +108,56 @@ if st.button(t["submit"]):
             "Soil_pH": pH
         }])
 
+
+        input_df = pd.DataFrame([{
+            "Crop": crop,
+            "Soil_Type": soil,
+            "Rainfall_mm": rainfall,
+            "Soil_pH": pH
+        }])
+
         prediction = model.predict(input_df)[0]
         compost, n, p, k = map(lambda x: round(x, 2), prediction)
 
         st.subheader(t["output"])
-        st.markdown(f"🌿 **Compost**: {compost:.2f} kg/acre")
-        st.markdown(f"🧪 **NPK**: {n:.2f}:{p:.2f}:{k:.2f} kg/acre")
+        st.markdown(f"🌿 **Compost**: {compost} kg/acre")
+        st.markdown(f"🧪 **NPK**: {n}:{p}:{k} kg/acre")
 
-st.subheader("📊 Visualizations")
+        # ✅ Now comes the visualizations
+        st.subheader("📊 Visualizations")
 
-# 1. Rainfall Bar Plot
-rain_data = pd.DataFrame({
-    "Parameter": ["Rainfall (mm)"],
-    "Value": [rainfall]
-})
+        # 1. Rainfall Bar Plot
+        rain_data = pd.DataFrame({
+            "Parameter": ["Rainfall (mm)"],
+            "Value": [rainfall]
+        })
 
-rain_chart = alt.Chart(rain_data).mark_bar(color="skyblue").encode(
-    x=alt.X("Parameter", title=""),
-    y=alt.Y("Value", title="Millimetres (mm)")
-).properties(width=300, height=200)
+        rain_chart = alt.Chart(rain_data).mark_bar(color="skyblue").encode(
+            x=alt.X("Parameter", title=""),
+            y=alt.Y("Value", title="Millimetres (mm)")
+        ).properties(width=300, height=200)
 
-st.altair_chart(rain_chart)
+        st.altair_chart(rain_chart)
 
-# 2. NPK Composition Pie Chart
-npk_data = pd.DataFrame({
-    "Nutrient": ["Nitrogen (N)", "Phosphorus (P)", "Potassium (K)"],
-    "Value": [n, p, k]
-})
+        # 2. NPK Composition Pie Chart
+        npk_data = pd.DataFrame({
+            "Nutrient": ["Nitrogen (N)", "Phosphorus (P)", "Potassium (K)"],
+            "Value": [n, p, k]
+        })
 
-fig = px.pie(npk_data, names="Nutrient", values="Value", title="🔬 NPK Composition")
-st.plotly_chart(fig)
+        fig = px.pie(npk_data, names="Nutrient", values="Value", title="🔬 NPK Composition")
+        st.plotly_chart(fig)
 
-# 3. Compost & Nutrient Summary Bar Chart
-summary_data = pd.DataFrame({
-    "Type": ["Compost", "N", "P", "K"],
-    "Value (kg/acre)": [compost, n, p, k]
-})
+        # 3. Compost & Nutrient Summary Bar Chart
+        summary_data = pd.DataFrame({
+            "Type": ["Compost", "N", "P", "K"],
+            "Value (kg/acre)": [compost, n, p, k]
+        })
 
-summary_chart = alt.Chart(summary_data).mark_bar(color="mediumseagreen").encode(
-    x="Type",
-    y="Value (kg/acre)"
-).properties(width=400, height=250)
+        summary_chart = alt.Chart(summary_data).mark_bar(color="mediumseagreen").encode(
+            x="Type",
+            y="Value (kg/acre)"
+        ).properties(width=400, height=250)
 
-st.altair_chart(summary_chart)
+        st.altair_chart(summary_chart)
+
