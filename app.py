@@ -33,6 +33,12 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+t = {
+    "submit": "Submit",
+    "title": "Welcome to the Fertilizer Predictor",
+    "input_label": "Enter crop details"
+}
+
 if st.button(t["submit"]):
     if not crop or not soil or not city:
         st.error(t["errors"]["missing_input"])
