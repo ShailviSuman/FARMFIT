@@ -1,0 +1,41 @@
+{
+    "English": {
+        "title": "FarmFit – Fertilizer Recommender",
+        "submit": "Get Recommendation",
+        "soil_ph": "Soil pH",
+        "crop": "Crop",
+        "soil": "Soil Type",
+        "rainfall": "Rainfall (mm)",
+        "output": "Recommended Compost and NPK",
+        "errors": {
+            "missing_input": "Please fill in all fields.",
+            "invalid_pH": "Soil pH must be between 4.5 and 9.0."
+        }
+    },
+    "Hindi": {
+        "title": "फार्मफिट – उर्वरक सुझाव प्रणाली",
+        "submit": "सुझाव प्राप्त करें",
+        "soil_ph": "मिट्टी का पीएच",
+        "crop": "फसल",
+        "soil": "मिट्टी का प्रकार",
+        "rainfall": "वर्षा (मिमी)",
+        "output": "अनुशंसित खाद और एनपीके",
+        "errors": {
+            "missing_input": "कृपया सभी फ़ील्ड भरें।",
+            "invalid_pH": "मिट्टी का पीएच 4.5 से 9.0 के बीच होना चाहिए।"
+        }
+    },
+    "Tamil": {
+        "title": "பார்ம்ஃபிட் – உர பரிந்துரை அமைப்பு",
+        "submit": "பரிந்துரை பெறுங்கள்",
+        "soil_ph": "மண் பி.ஏச்",
+        "crop": "விவசாய பயிர்",
+        "soil": "மண் வகை",
+        "rainfall": "மழை அளவு (மிமீ)",
+        "output": "பரிந்துரைக்கப்பட்ட கொம்போஸ்ட் மற்றும் என்.பி.கே",
+        "errors": {
+            "missing_input": "தயவுசெய்து அனைத்து புலங்களையும் நிரப்பவும்.",
+            "invalid_pH": "மண் பி.ஏச் 4.5 மற்றும் 9.0 க்கு இடையில் இருக்க வேண்டும்."
+        }
+    }
+}
