@@ -5,7 +5,7 @@ import requests
 import json
 
 # Load model
-model = joblib.load("fertilizer_model.pkl")
+model = joblib.load("farmfit_model.pkl")
 
 # Load translations
 with open("lang.json", "r", encoding="utf-8") as f:
