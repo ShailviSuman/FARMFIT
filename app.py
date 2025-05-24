@@ -55,5 +55,3 @@ if st.button(t["submit"]):
         st.subheader(t["output"])
         st.markdown(f"🌿 **Compost**: {compost} kg/acre")
         st.markdown(f"🧪 **NPK**: {n}:{p}:{k} kg/acre")
-
-streamlit run app.py
