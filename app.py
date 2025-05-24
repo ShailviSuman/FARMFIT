@@ -3,9 +3,9 @@ import pandas as pd
 import joblib
 import requests
 import json
-import altair as alt  # Import at the top
+import altair as alt  
 
-# --- CSS for fonts and button styles ---
+# CSS for fonts and button styles 
 st.markdown(
     """
     <style>
@@ -34,17 +34,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Load model and translations
+
 model = joblib.load("farmfit_model.pkl")
 
 with open("lang.json", "r", encoding="utf-8") as f:
     translations = json.load(f)
 
-# Language selection
+
 lang = st.selectbox("🌐 Language / மொழி / भाषा", list(translations.keys()))
 t = translations[lang]
 
-# Title
+
 st.title(t["title"])
 
 # Inputs
@@ -103,7 +103,7 @@ if st.button(t["submit"]):
         ).properties(width=300, height=200)
         st.altair_chart(chart)
 
-        # Prepare input for model
+        
         input_df = pd.DataFrame([{
             "Crop": crop,
             "Soil_Type": soil,
