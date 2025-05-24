@@ -54,32 +54,30 @@ pH = st.number_input(t["soil_ph"], min_value=4.5, max_value=9.0, step=0.1)
 city = st.text_input(t["rainfall"], placeholder="Name your city to get rainfall e.g., Chennai, Mumbai, Delhi")
 
 
-# Function to get rainfall from API
 def get_rainfall(city):
-    if not city:
-        return 0  # No city entered, no rainfall
     api_key = "d78e0c7f2f4e12ed453d76c416a84718"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    url = f"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric"
+
     try:
         res = requests.get(url)
         res.raise_for_status()
         data = res.json()
 
-        rain_1h = data.get("rain", {}).get("1h", None)
-        rain_3h = data.get("rain", {}).get("3h", None)
+        # Sum up rainfall for today (first 8 time blocks of 3h = 24h)
+        rainfall = 0
+        for i in range(8):
+            rain_val = data["list"][i].get("rain", {}).get("3h", 0)
+            rainfall += rain_val
 
-        if rain_1h is not None:
-            return rain_1h
-        elif rain_3h is not None:
-            return rain_3h / 3
-        else:
-            return 0
+        return round(rainfall, 2)
+
     except requests.exceptions.HTTPError:
         st.error("City not found or API error. Please enter a valid city.")
         return None
     except Exception as e:
         st.error(f"Error fetching rainfall data: {e}")
         return None
+
 
 # Button and prediction logic
 if st.button(t["submit"]):
