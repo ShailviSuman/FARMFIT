@@ -5,3 +5,4 @@ xgboost
 lightgbm
 joblib
 numpy
+altair
